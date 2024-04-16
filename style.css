@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Belleza", sans-serif;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(pink.jpg);
+    background-size: cover;
+    position: center;
+    background-attachment: fixed;
+}
+.box{
+    position: relative;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+}
+.box .card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    width: 300px;
+    min-height: 400px;
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    border-top:  1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+}
+.elements {
+    position: absolute;
+    top: 50px;
+    left: -30px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transform: translateZ(80px);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+    border-top:  1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.elements.bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(3d-fluency-get-quote.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transform: 500ms;
+}
+.box:hover .elements.bg::before {
+    opacity: 1;
+}
